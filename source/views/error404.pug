@@ -1,0 +1,10 @@
+extends ./layout/head
+
+block content
+  include ./layout/navbar
+  .ps-content
+    .ps-row.ps-padding-64
+      h1= title
+      h2= description
+      pre 
+        code= error.stack
