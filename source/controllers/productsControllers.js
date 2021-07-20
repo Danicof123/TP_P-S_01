@@ -6,12 +6,12 @@ const detail = (req, res) => {
     let plato = '';
   
     if(!isNaN(id))
-      plato = db_menu.filter(p => p.id === id)
+      plato = db_menu.find(p => p.id === id)
   
-    if(plato.length > 0){
+    if(plato){
       const locals = {
-        title : plato[0].name,
-        plato : plato[0],
+        title : plato.name,
+        plato : plato,
       }
       
       res.render('detail', locals);

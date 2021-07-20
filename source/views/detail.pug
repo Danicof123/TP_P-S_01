@@ -3,13 +3,18 @@ extends ./layout/head
 block content
   include ./layout/navbar
   .ps-content
-    .ps-row.ps-padding-64
-      h2= plato.name
-      h4= plato.description
-      img(
-        src=plato.src
-        class="ps-round ps-image ps-opacity-min"
-        width="600"
-        alt=plato.name
-      )
-      p= ' U$S ' + plato.price.toFixed(2)
+    .ps-row.ps-padding-64#menu
+      .ps-col.l6.ps-padding-large
+        h1.ps-center= plato.name
+        h4= plato.description
+        p.ps-text-grey= ' U$S ' + plato.price.toFixed(2)
+
+      .ps-col.l6.ps-padding-large.ps-img-menu
+        img(
+          src=plato.src
+          class="ps-round ps-image ps-opacity-min"
+          width="600"
+          alt=plato.name
+        )
+    include ./layout/footer
+      
